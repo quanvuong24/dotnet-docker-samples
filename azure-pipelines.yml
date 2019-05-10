@@ -14,5 +14,9 @@ variables:
   publishFolder: 'prod'
 
 steps:
-- script: dotnet publish -c $(buildConfiguration) -o $(publishFolder)
-  displayName: 'dotnet publish $(buildConfiguration) to $(publishFolder)'
+- task: DotNetCoreCLI@2
+  displayName: Build ASP.NET core app
+  inputs:
+    command: publish
+    projects: '**/*.csproj'
+    arguments: '-c $(buildConfiguration) -o $(publishFolder)'
