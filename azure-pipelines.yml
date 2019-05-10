@@ -14,7 +14,5 @@ variables:
   publishFolder: 'prod'
 
 steps:
-- script: dotnet restore -p ./aspnetapp/aspnetapp.csproj
-  displayName: 'Restore .NET core app'
 - script: dotnet publish -c $(buildConfiguration) -o $(publishFolder) -p ./aspnetapp/aspnetapp.csproj
   displayName: 'Publish .NET core app'
