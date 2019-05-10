@@ -14,5 +14,5 @@ variables:
   publishFolder: 'prod'
 
 steps:
-- script: dotnet publish -c $(buildConfiguration) -o $(publishFolder) -p ./aspnetapp/aspnetapp.csproj
+- script: dotnet publish -c $(buildConfiguration) -o $(publishFolder)
   displayName: 'Publish .NET core app'
