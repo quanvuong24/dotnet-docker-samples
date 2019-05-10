@@ -19,4 +19,4 @@ steps:
   inputs:
     command: run
     projects: '**/*.csproj'
-    arguments: '--configuration $(buildConfiguration)'
+    arguments: '--project ./home/vsts/work/1/s/aspnetapp/aspnetapp.csproj'
