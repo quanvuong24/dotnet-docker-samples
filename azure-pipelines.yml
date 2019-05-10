@@ -10,12 +10,17 @@ pool:
   vmImage: 'ubuntu-16.04'
 
 variables:
-  buildConfiguration: 'Release'
+  buildConfiguration: 'release'
   publishFolder: 'prod'
 
 steps:
 - task: DotNetCoreCLI@2
-  displayName: Build ASP.NET core app
+  displayName: Run ASP.NET core app
+  inputs:
+    command: run
+    projects: '**/*.csproj'
+- task: DotNetCoreCLI@2
+  displayName: Publish ASP.NET core app
   inputs:
     command: publish
     projects: '**/*.csproj'
