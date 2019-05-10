@@ -16,8 +16,9 @@ variables:
 steps:
 - task: DotNetCoreInstaller@0
   inputs:
-    version: '2.0.0'
-- script: dotnet restore
-  displayName: 'dotnet restore'
-- script: dotnet publish -c $(buildConfiguration) -o $(publishFolder)
-  displayName: 'dotnet publish $(buildConfiguration) to $(publishFolder)'
+    version: '2.1.300'
+- task: DotNetCoreCLI@2
+  displayName: Restore ASP.NET core app
+  inputs:
+    command: restore
+    projects: '**/*.csproj'
