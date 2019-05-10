@@ -19,4 +19,4 @@ steps:
   inputs:
     command: publish
     projects: '**/*.csproj'
-    arguments: '-c $(buildConfiguration) -o $(publishFolder)'
+    arguments: '-c $(buildConfiguration) -o out'
