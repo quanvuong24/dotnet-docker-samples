@@ -14,5 +14,7 @@ variables:
   publishFolder: 'prod'
 
 steps:
+- script: cd aspnetapp
+  displayName: 'Move to .NET core app'
 - script: dotnet publish -c $(buildConfiguration) -o $(publishFolder)
   displayName: 'Publish .NET core app'
