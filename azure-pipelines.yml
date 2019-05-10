@@ -16,5 +16,5 @@ variables:
 steps:
 - script: dotnet publish ./aspnetapp/aspnetapp.csproj -c $(buildConfiguration) -o $(publishFolder)
   displayName: 'Publish .NET core app'
-- script: ls -l
+- script: dotnet ./aspnetapp/$(publishFolder)/aspnetapp.dll
   displayName: 'Run .NET core app'
