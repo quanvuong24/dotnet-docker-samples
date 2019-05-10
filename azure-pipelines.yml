@@ -14,11 +14,7 @@ variables:
   publishFolder: 'prod'
 
 steps:
-- script: dotnet run --project ./aspnetapp/aspnetapp.csproj
-  displayName: 'Run .NET core app'
-- task: DotNetCoreCLI@2
-  displayName: Run ASP.NET core app
-  inputs:
-    command: run
-    projects: '**/*.csproj'
-    arguments: '--project ./home/vsts/work/1/s/aspnetapp/aspnetapp.csproj'
+- script: dotnet restore -p ./aspnetapp/aspnetapp.csproj
+  displayName: 'Restore .NET core app'
+- script: dotnet publish -c $(buildConfiguration) -o $(publishFolder) -p ./aspnetapp/aspnetapp.csproj
+  displayName: 'Publish .NET core app'
