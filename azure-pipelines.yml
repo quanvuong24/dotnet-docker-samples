@@ -14,5 +14,8 @@ variables:
   publishFolder: 'prod'
 
 steps:
-- script: dotnet run
-  displayName: 'Run .NET core app'
+- task: DotNetCoreCLI@2
+  displayName: Run ASP.NET core app
+  inputs:
+    command: run
+    projects: '**/*.csproj'
